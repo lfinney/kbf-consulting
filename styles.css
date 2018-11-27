@@ -1,0 +1,44 @@
+:root {
+  --main-color: #3494BA;
+  --secondary-color: #B0E888;
+  --black: #333232;
+  --gray: #8F8E8D;
+  --white: #F6F8FF;
+};
+
+main {
+  width: 100vw;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.card {
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+}
+
+#black {
+  background-color: var(--black);
+}
+
+#gray {
+  background-color: var(--gray);
+}
+
+#white {
+  background-color: var(--white);
+}
+
+#secondary {
+  background-color: var(--secondary-color);
+}
+
+#main {
+  background-color: var(--main-color);
+}
