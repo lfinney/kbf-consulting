@@ -24,6 +24,7 @@ header {
   align-items: center;
   width: 700px;
   position: sticky;
+  border-right: var(--light-gray) solid 1px;
 }
 
 .header-content {
@@ -54,7 +55,6 @@ hr {
 }
 
 main {
-  padding: 20px 0;
   background: -moz-linear-gradient(left, var(--white-gray) 0%, var(--white) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, var(--white-gray) 0%, var(--white) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, var(--white-gray) 0%, var(--white) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -79,17 +79,15 @@ h1 {
   padding-bottom: 3px;
 }
 
-.category-container {
-  margin: 0 20px 20px 20px;
-  padding: 10px;
-}
-
 .category {
-
+  margin-bottom: 20px;
 }
 
 .category-heading {
-  border-bottom: 5px double var(--secondary-color);
+  background-color: white;
+  border-top: 5px double var(--secondary-color);
+  margin-bottom: 10px;
+  padding: 5px 25px;
 }
 
 .category-content {
@@ -97,10 +95,10 @@ h1 {
   background: -webkit-linear-gradient(left, white 0%, var(--white) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, white 0%, var(--white) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   margin-top: 10px;
-  padding: 15px;
+  padding: 0 15px;
   width: 100%;
 }
 
@@ -110,23 +108,32 @@ h1 {
 }
 
 .category-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  width: 30%;
 }
 
 .content-heading {
   border-bottom: 2px solid var(--main-color-gradient);
-  height: 75px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
 }
 
-.content-heading hr {
+.content hr {
   width: 100%;
+  margin-top: 0;
   margin-bottom: auto;
 }
 
-.category-content {
-  width: 30%;
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.content ul li {
+  font-size: .9em;
 }
 
 .box-shadow {
@@ -135,8 +142,14 @@ h1 {
   -webkit-box-shadow: 2px 2px 5px 0px var(--dark-gray);
 }
 
+.header-box-shadow {
+  box-shadow: 0px 3px 10px -2px var(--dark-gray);
+  -moz-box-shadow: 0px 3px 10px -2px var(--dark-gray);
+  -webkit-box-shadow: 0px 3px 10px -2px var(--dark-gray);
+}
+
 .border-radius {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
