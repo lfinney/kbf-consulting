@@ -79,8 +79,15 @@ h1 {
   padding-bottom: 3px;
 }
 
+.category-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: stretch;
+}
+
 .category {
-  height: 33.3334vh;
+  flex-grow: 1;
 }
 
 .category-heading:hover {
@@ -90,10 +97,9 @@ h1 {
 .category-heading {
   background-color: white;
   border-top: 5px double var(--secondary-color);
-  height: 100%;
-  /* padding: 5px 25px; */
   display: flex;
   align-items: center;
+  height: auto;
 }
 
 .category-heading h2 {
@@ -116,16 +122,12 @@ h1 {
   flex-direction: column;
   margin-top: 10px;
   padding: 0 15px;
-  width: 100%;
+  width: 30%;
 }
 
 .content-container {
   display: flex;
   justify-content: space-around;
-}
-
-.category-content {
-  width: 30%;
 }
 
 .content-heading {
@@ -173,4 +175,33 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+
+.none-selected {
+  height: 33.3334vh;
+}
+
+.selected {
+  height: 50vh;
+}
+
+.not-selected {
+  height: 25vh;
+}
+
+.not-selected-heading {
+  height: 100%;
+}
+
+.selected-heading {
+  height: 50%;
+}
+
+.selection-made-section {
+  height: 50vh;
+}
+
+.active-selection {
+
 }
