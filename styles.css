@@ -14,17 +14,22 @@
 };
 
 body {
-
+  transition: all 5s;
 }
 
 header {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  justify-content: space-around;
   align-items: center;
   width: 700px;
   position: sticky;
   border-right: var(--light-gray) solid 1px;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  color: var(--dark-gray);
 }
 
 .header-content {
@@ -40,6 +45,7 @@ header {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .social-media {
@@ -94,6 +100,10 @@ h1 {
   background-color: var(--gray);
 }
 
+.category-heading:active {
+  background-color: var(--black);
+}
+
 .category-heading {
   background-color: white;
   border-top: 5px double var(--secondary-color);
@@ -120,9 +130,10 @@ h1 {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 10px;
+  margin: 10px;
   padding: 0 15px;
   width: 30%;
+  height: 30vh;
 }
 
 .content-container {
@@ -135,7 +146,7 @@ h1 {
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 1em;
+  font-size: .8em;
 }
 
 .content hr {
@@ -151,8 +162,15 @@ h1 {
 
 }
 
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
 .content ul li {
-  font-size: .9em;
+  display: inline-block;
+  font-size: .6em;
+  margin-bottom: 10px;
 }
 
 .box-shadow {
@@ -184,24 +202,35 @@ h1 {
 
 .selected {
   height: 50vh;
+  transition: 1s;
 }
 
 .not-selected {
-  height: 25vh;
+  height: 20vh;
+  transition: 1s;
 }
 
 .not-selected-heading {
   height: 100%;
+  transition: .4s;
 }
 
 .selected-heading {
-  height: 50%;
+  height: 20vh;
+  transition: .4s;
+  background-color: var(--dark-gray);
+  pointer-events: disabled;
+}
+
+.selected-heading h2 {
+  color: var(--white);
 }
 
 .selection-made-section {
-  height: 50vh;
+  height: 40vh;
+  transition: 1s;
 }
 
 .active-selection {
-
+  transition: 1s;
 }
