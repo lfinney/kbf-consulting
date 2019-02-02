@@ -29,6 +29,17 @@ header {
 
 .header-default {
   width: 700px;
+  transition: 1s;
+}
+
+.header-selected {
+  width: 1500px;
+  transition: 1s;
+}
+
+.header-not-selected {
+  width: 200px;
+  transition: 1s;
 }
 
 .header-content-container {
@@ -181,6 +192,7 @@ ul {
 
 .tab-default {
   height: 33.3334vh;
+  transition: 1s;
 }
 
 .tab-selected {
