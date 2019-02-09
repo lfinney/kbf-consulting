@@ -7,6 +7,7 @@ $(document).ready(function(){
   const manageTabFlow = (element) => {
     const tabs = getTabs();
     const header = getHeader();
+
     if ($(element).hasClass('tab-selected') || $(element).hasClass('header-selected')) {
       $(header).removeClass('header-selected header-not-selected').addClass('header-default');
       $.each(tabs, function(index, tab) {
@@ -26,9 +27,28 @@ $(document).ready(function(){
     }
   }
 
+  const manageContentDisplay = (element) => {
+    const tabHeading = $(element).find('.tab-heading');
+    const tabContent = $(element).find('.tab-content');
+
+    if (tabHeading.hasClass('selected-heading')){
+      tabHeading.removeClass('selected-heading').addClass('not-selected-heading');
+      tabContent.addClass('hidden');
+    } else {
+      const tabs = getTabs();
+      $.each(tabs, function(index, tab) {
+        $(tab).find('.tab-heading').removeClass('selected-heading').addClass('not-selected-heading');
+        $(tab).find('.tab-content').addClass('hidden');
+      })
+      tabHeading.removeClass('not-selected-heading').addClass('selected-heading');
+      tabContent.removeClass('hidden');
+    }
+  }
+
 
   $('.tab, header').on('click', function(event) {
     var element = $(this);
     manageTabFlow(element);
+    manageContentDisplay(element);
   });
 });
