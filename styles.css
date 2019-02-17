@@ -92,6 +92,41 @@ h1 {
   margin-right: auto
 }
 
+#logo-container {
+  height: 250px;
+}
+
+#logo-circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 20px solid var(--main-color-dark);
+  transform: rotate(0deg);
+	transition: transform 0.7s linear;
+  position: relative;
+}
+
+.logo-ball {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transition: transform 1s linear;
+  background: var(--main-color-dark);
+  border: solid 1px #fff;
+}
+
+.logo-ball, #ball-1 {
+  top: -10px;
+  left: 115px;
+}
+
+.logo-ball, #ball-2 {
+  top: 135px;
+  left: 10px;
+}
+
 .logo {
   height: 120px;
   margin-top: 20px;

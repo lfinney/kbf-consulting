@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
   const getTabs = () => $('main').find('.tab');
-
   const getHeader = () => $('body').find('header');
 
   const manageTabFlow = (element) => {
@@ -45,10 +44,22 @@ $(document).ready(function(){
     }
   }
 
+  const spinLogo = (event) => {
+
+  }
 
   $('.tab, header').on('click', function(event) {
     var element = $(this);
     manageTabFlow(element);
     manageContentDisplay(element);
   });
+
+  $('#logo-circle').on('mouseenter', function(event) {
+    console.log('mouseenter');
+    var _CURRENT_ANGLE = 360;
+
+    	$("#logo-circle").css({ transform: 'rotate(' + _CURRENT_ANGLE + 'deg)' });
+    	$("#ball-1").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
+    	$("#ball-2").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
+    });
 });
