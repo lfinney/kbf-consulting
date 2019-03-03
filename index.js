@@ -7,13 +7,15 @@ $(document).ready(function(){
     const tabs = getTabs();
     const header = getHeader();
 
-    if ($(element).hasClass('tab-selected') || $(element).hasClass('header-selected')) {
-      $(header).removeClass('header-selected header-not-selected').addClass('header-default');
+    if ($(element).hasClass('tab-selected')) {
+      $(header).removeClass('header-not-selected').addClass('header-default');
+      $(header).find('.header-content-container').removeClass('hidden')
       $.each(tabs, function(index, tab) {
         $(tab).removeClass('tab-selected tab-not-selected').addClass('tab-default');
       });
-    } else if ($(element).hasClass('header')) {
-      $(element).removeClass('header-default header-not-selected').addClass('header-selected')
+    } else if ($(element).hasClass('header-not-selected')) {
+      $(element).removeClass('header-not-selected').addClass('header-default');
+      $(header).find('.header-content-container').removeClass('hidden');
       $.each(tabs, function(index, tab) {
         $(tab).removeClass('tab-selected tab-default').addClass('tab-not-selected');
       });
@@ -23,6 +25,7 @@ $(document).ready(function(){
       });
       $(element).removeClass('tab-not-selected').addClass('tab-selected');
       $(header).removeClass('header-default').addClass('header-not-selected');
+      $(header).find('.header-content-container').addClass('hidden')
     }
   }
 
@@ -53,13 +56,4 @@ $(document).ready(function(){
     manageTabFlow(element);
     manageContentDisplay(element);
   });
-
-  $('#logo-circle').on('mouseenter', function(event) {
-    console.log('mouseenter');
-    var _CURRENT_ANGLE = 360;
-
-    	$("#logo-circle").css({ transform: 'rotate(' + _CURRENT_ANGLE + 'deg)' });
-    	$("#ball-1").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
-    	$("#ball-2").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
-    });
 });
