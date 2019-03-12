@@ -29,17 +29,17 @@ header {
 
 .header-default {
   width: 700px;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .header-selected {
   width: 1500px;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .header-not-selected {
   width: 200px;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .header-content-container {
@@ -49,13 +49,19 @@ header {
   align-items: center;
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
+h1, h2, h3, h5, h6, p {
   color: var(--dark-gray);
+}
+
+h4, li {
+  color: var(--light-gray);
 }
 
 .header-content {
   margin: 0 50px;
   text-align: center;
+  transition: 1.5s;
+
 }
 
 .contact-info {
@@ -92,45 +98,11 @@ h1 {
   margin-right: auto
 }
 
-#logo-container {
-  height: 250px;
-}
-
-#logo-circle {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  border: 20px solid var(--main-color-dark);
-  transform: rotate(0deg);
-	transition: transform 0.7s linear;
-  position: relative;
-}
-
-.logo-ball {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  transform: rotate(0deg);
-  transition: transform 1s linear;
-  background: var(--main-color-dark);
-  border: solid 1px #fff;
-}
-
-.logo-ball, #ball-1 {
-  top: -10px;
-  left: 115px;
-}
-
-.logo-ball, #ball-2 {
-  top: 135px;
-  left: 10px;
-}
-
 .logo {
   height: 120px;
   margin-top: 20px;
   width: 120px;
+  transition: 1.5s;
 }
 
 .nav-item {
@@ -140,6 +112,7 @@ h1 {
 }
 
 .content-container {
+  color: var(--white-gray);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -164,7 +137,6 @@ h1 {
 
 .tab-heading {
   background-color: white;
-  border-top: 5px double var(--secondary-color);
   display: flex;
   align-items: center;
   height: auto;
@@ -182,7 +154,7 @@ h1 {
 }
 
 .content-card {
-  background: white;
+  background-color:rgba(50, 50, 50, 0.5);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -233,17 +205,17 @@ ul {
 
 .tab-default {
   height: 33.3334vh;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .tab-selected {
   height: 50vh;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .tab-not-selected {
   height: 20vh;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .not-selected-heading {
@@ -264,11 +236,11 @@ ul {
 
 .selection-made-section {
   height: 40vh;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .active-selection {
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .box-shadow {
@@ -290,6 +262,15 @@ ul {
 }
 
 .hidden {
+  opacity: 0;
+  -webkit-transition: all .3s ease-out 0;
+  -moz-transition: all .3s ease-out 0;
+  -o-transition: all .3s ease-out 0;
+  -ms-transition: all .3s ease-out 0;
+  transition: all .3s ease-out 0;
+}
+
+.none {
   display: none;
 }
 

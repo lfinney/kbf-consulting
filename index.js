@@ -9,13 +9,19 @@ $(document).ready(function(){
 
     if ($(element).hasClass('tab-selected')) {
       $(header).removeClass('header-not-selected').addClass('header-default');
-      $(header).find('.header-content-container').removeClass('hidden')
+      $(header).find('.header-content-container').delay(500).queue(function(next){
+        $(this).removeClass('none');
+        next();
+      });
       $.each(tabs, function(index, tab) {
         $(tab).removeClass('tab-selected tab-not-selected').addClass('tab-default');
       });
     } else if ($(element).hasClass('header-not-selected')) {
       $(element).removeClass('header-not-selected').addClass('header-default');
-      $(header).find('.header-content-container').removeClass('hidden');
+      $(header).find('.header-content-container').delay(500).queue(function(next){
+        $(this).removeClass('none');
+        next();
+      });
       $.each(tabs, function(index, tab) {
         $(tab).removeClass('tab-selected tab-default').addClass('tab-not-selected');
       });
@@ -25,7 +31,7 @@ $(document).ready(function(){
       });
       $(element).removeClass('tab-not-selected').addClass('tab-selected');
       $(header).removeClass('header-default').addClass('header-not-selected');
-      $(header).find('.header-content-container').addClass('hidden')
+      $(header).find('.header-content-container').addClass('none')
     }
   }
 
@@ -35,15 +41,15 @@ $(document).ready(function(){
 
     if (tabHeading.hasClass('selected-heading')){
       tabHeading.removeClass('selected-heading').addClass('not-selected-heading');
-      tabContent.addClass('hidden');
+      tabContent.addClass('hidden none');
     } else {
       const tabs = getTabs();
       $.each(tabs, function(index, tab) {
         $(tab).find('.tab-heading').removeClass('selected-heading').addClass('not-selected-heading');
-        $(tab).find('.tab-content').addClass('hidden');
+        $(tab).find('.tab-content').addClass('hidden none');
       })
       tabHeading.removeClass('not-selected-heading').addClass('selected-heading');
-      tabContent.removeClass('hidden');
+      tabContent.removeClass('hidden none');
     }
   }
 
