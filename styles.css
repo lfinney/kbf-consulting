@@ -1,8 +1,8 @@
 :root {
-  --main-color-white: #BEDCE9;
-  --main-color-light: #88C0D7;
-  --main-color: #3494BA;
-  --main-color-dark: #225F77;
+  --main-color-white: #A9BFE5;
+  --main-color-light: #7599D5;
+  --main-color: #4273C6;
+  --main-color-dark: #315491;
   --secondary-color: #B0E888;
   --black: #2A2929;
   --dark-gray: #585757;
@@ -10,11 +10,11 @@
   --light-gray: #B7B7B6;
   --white-gray: #EDEDED;
   --white: #F4F4F4;
-  --main-color-gradient: linear-gradient(to right, var(--main-color-white), var(--main-color), var(--main-color-white));
+  --main-color-gradient: linear-gradient(to right, var(--main-color), var(--main-color-dark), var(--main-color));
 };
 
 body {
-  transition: all 5s;
+  display: flex;
 }
 
 header {
@@ -28,18 +28,13 @@ header {
 }
 
 .header-default {
-  width: 700px;
-  transition: 1.5s;
-}
-
-.header-selected {
-  width: 1500px;
-  transition: 1.5s;
+  width: 40vw;
+  transition: 2s;
 }
 
 .header-not-selected {
   width: 200px;
-  transition: 1.5s;
+  transition: 2s;
 }
 
 .header-content-container {
@@ -54,7 +49,7 @@ h1, h2, h3, h5, h6, p {
 }
 
 h4, li {
-  color: var(--light-gray);
+  color: var(--white);
 }
 
 .header-content {
@@ -98,6 +93,13 @@ h1 {
   margin-right: auto
 }
 
+.logo-container {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
   height: 120px;
   margin-top: 20px;
@@ -112,7 +114,7 @@ h1 {
 }
 
 .content-container {
-  color: var(--white-gray);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -127,19 +129,26 @@ h1 {
   flex-grow: 1;
 }
 
-.tab-heading:hover {
-  background-color: var(--gray);
-}
-
-.tab-heading:active {
-  background-color: var(--black);
-}
-
 .tab-heading {
-  background-color: white;
+  background: white;
+  background: linear-gradient(0deg, var(--white-gray) 0%, var(--white) 50%, white 100%);
   display: flex;
   align-items: center;
   height: auto;
+}
+
+.tab-heading:hover {
+  background: var(--gray);
+  background: linear-gradient(0deg, var(--light-gray) 0%, var(--gray) 50%, var(--dark-gray) 100%);
+}
+
+.tab-heading:hover h2{
+  color: var(--white);
+}
+
+.tab-heading:active {
+  background: var(--black);
+  background: linear-gradient(0deg, var(--gray) 0%, var(--dark-gray) 50%, var(--black) 100%);
 }
 
 .tab-heading h2 {
@@ -153,8 +162,23 @@ h1 {
   width: 100%;
 }
 
+.not-selected-heading {
+  height: 100%;
+}
+
+.selected-heading {
+  height: 20vh;
+  background: linear-gradient(0deg, var(--black) 0%, var(--dark-gray) 50%, var(--gray) 100%);
+  pointer-events: disabled;
+  transition: background 2s ease;
+}
+
+.selected-heading h2 {
+  color: var(--white);
+}
+
 .content-card {
-  background-color:rgba(50, 50, 50, 0.5);
+  background-color:rgba(50, 50, 50, 0.8);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -176,7 +200,10 @@ h1 {
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   font-size: .8em;
+  width: 100%;
+  margin-left: 5px;
 }
 
 .content hr {
@@ -218,27 +245,6 @@ ul {
   transition: 1.5s;
 }
 
-.not-selected-heading {
-  height: 100%;
-  transition: .4s;
-}
-
-.selected-heading {
-  height: 20vh;
-  transition: .4s;
-  background-color: var(--dark-gray);
-  pointer-events: disabled;
-}
-
-.selected-heading h2 {
-  color: var(--white);
-}
-
-.selection-made-section {
-  height: 40vh;
-  transition: 1.5s;
-}
-
 .active-selection {
   transition: 1.5s;
 }
@@ -276,4 +282,81 @@ ul {
 
 .no-top-margin {
   margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  body {
+    flex-direction: column;
+  }
+
+  .header, .header-default, .header-not-selected {
+    flex-direction: row;
+    width: 100vw;
+    height: 25vh;
+    border-bottom: var(--gray) solid 1px;
+    justify-content: space-around;
+  }
+
+  .logo {
+    /* width: 50vw;
+    height: 50vw; */
+    margin: auto;
+  }
+
+  .header-content-container {
+    width: 50vw;
+    margin: auto;
+  }
+
+  .header-content-container hr {
+    display: none;
+  }
+
+  .header-content {
+    margin: 0;
+  }
+
+  main {
+    height: 75vh;
+  }
+
+  .no-top-margin {
+    margin-top: 20px;
+  }
+
+  .bio, .social-media {
+    display: none;
+  }
+
+  .content-container {
+    height: 75vh;
+  }
+
+  .tab-default {
+    height: 25vh;
+  }
+
+  .tab-selected {
+    height: 50vh;
+  }
+
+  .tab-not-selected {
+    height: 12.5vh;
+  }
+
+  .selected-heading {
+    height: 18vh;
+  }
+
+  .content-heading {
+    font-size: .9em;
+  }
+
+  .content ul li {
+    font-size: .7em;
+  }
+
+  .content-card {
+    height: 30vh;
+  }
 }
